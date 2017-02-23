@@ -17,7 +17,7 @@ def allowed_file(filename):
 def index():
     if request.method == 'POST':
         # check if the post request has the file part
-        file_name = "sound_file"
+        file_name = "aadhar_file"
         if file_name not in request.files:
             print("no file part")
             return redirect(request.url)
@@ -45,7 +45,7 @@ def get_text_from_image(path_to_image):
         from PIL import Image
         import tesserocr
         image = Image.open(path_to_image)
-        string = tesserocr.image_to_text(image, lang='eng')
+        string = tesserocr.image_to_text(image, lang='eng+hin+kan')
         return string
     except Exception:
         return False
