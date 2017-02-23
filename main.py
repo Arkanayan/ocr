@@ -45,7 +45,7 @@ def get_text_from_image(path_to_image):
         from PIL import Image
         import tesserocr
         image = Image.open(path_to_image)
-        string = tesserocr.image_to_text(image, lang='eng+hin+kan')
+        string = tesserocr.image_to_text(image, lang='eng+hin+kan+ben')
         return string
     except Exception:
         return False
